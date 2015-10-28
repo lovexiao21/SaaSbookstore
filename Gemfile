@@ -7,6 +7,11 @@ gem 'rails', '3.2.16'
 
 gem 'sqlite3'
 
+# add a perfect user verify system
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

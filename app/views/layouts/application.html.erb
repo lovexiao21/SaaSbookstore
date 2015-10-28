@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<p class="notice"><%= notice %></p>  <p class="alert"><%= alert %></p> 
 <div id="Container">
 
 	<div id="Top"> Hello,please <A href="">register</A> or <A href="">sign in</A></div>
@@ -19,6 +19,7 @@
 		    <ul id="menu_left">
 		      <li id="m_01"><a href="">Homepage</a></li>
 		      <li id="m_02"><a href="">what</a></li>
+
 		      <li id="m_03"><a href="">what</a></li>
 		      <li id="m_04"><a href="">what</a></li>
 		      <li id="m_07"><a href="">what</a></li>
@@ -55,6 +56,13 @@
 	          <TD height=105>
 	              <IMG src="closed.gif"><%= link_to 'new_book', new_book_path %><br>
 	              <IMG src="closed.gif"><%= link_to 'books', books_path %><br>
+	              	 <% if current_user %>
+      <%= link_to('退出', destroy_user_session_path, :method => :delete) %> |
+      <%= link_to('修改密码', edit_registration_path(:user)) %>
+    <% else %>
+      <%= link_to('注册', new_registration_path(:user)) %> |
+      <%= link_to('登录', new_session_path(:user)) %>
+    <% end %><span></span>
 	           </td>
 	        </TR>
 	      </TBODY>
